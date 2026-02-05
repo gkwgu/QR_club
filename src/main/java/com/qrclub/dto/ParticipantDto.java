@@ -1,9 +1,9 @@
-package com.qr_club.dto;
+package com.qrclub.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 public class ParticipantDto{
     private final String lastName;

@@ -1,13 +1,12 @@
-package com.qr_club.dto;
+package com.qrclub.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
-public class ParticipantCreateDto{
+public class QrCheckResponseDto{
     private final String lastName;
     private final String firstName;
     private final String patronymic;
 }
-

@@ -1,4 +1,4 @@
-package com.qr_club;
+package com.qrclub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

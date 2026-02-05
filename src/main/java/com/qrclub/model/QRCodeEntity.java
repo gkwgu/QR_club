@@ -1,10 +1,12 @@
-package com.qr_club.model;
+package com.qrclub.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,14 +19,19 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "participants")
-public class Participant {
+public class QRCodeEntity {
     @Id
     @GeneratedValue
     private Long id;
-    private String lastName;
-    private String firstName;
-    private String patronymic;
+
     @Column(nullable = false, unique = true)
     private UUID qrUuid;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "participant_id",
+            nullable = false,
+            unique = true
+    )
+    private ParticipantEntity participant;
 }
