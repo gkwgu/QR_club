@@ -1,0 +1,17 @@
+
+services:
+  postgres:
+    image: postgres:18
+    container_name: participant-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: participant_db
+      POSTGRES_USER: participant
+      POSTGRES_PASSWORD: participant
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
